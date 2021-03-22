@@ -1,5 +1,5 @@
-import Application from 'queertext/app';
-import config from 'queertext/config/environment';
+import Application from 'querytext/app';
+import config from 'querytext/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

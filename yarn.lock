@@ -1302,7 +1302,7 @@
     "@handlebars/parser" "^1.1.0"
     simple-html-tokenizer "^0.5.10"
 
-"@glimmer/tracking@^1.0.3":
+"@glimmer/tracking@^1.0.1", "@glimmer/tracking@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@glimmer/tracking/-/tracking-1.0.4.tgz#f1bc1412fe5e2236d0f8d502994a8f88af1bbb21"
   integrity sha512-F+oT8I55ba2puSGIzInmVrv/8QA2PcK1VD+GWgFMhF6WC97D+uZX7BFg+a3s/2N4FVBq5KHE+QxZzgazM151Yw==
@@ -4640,7 +4640,7 @@ elliptic@^6.5.3:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
-ember-auto-import@^1.10.1:
+ember-auto-import@^1.10.1, ember-auto-import@^1.5.2:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/ember-auto-import/-/ember-auto-import-1.10.1.tgz#6c93a875e494aa0a58b759867d3f20adfd514ae3"
   integrity sha512-7bOWzPELlVwdWDOkB+phDIjg8BNW+/2RiLLQ+Xa/eIvCLT4ABYhHV5wqW5gs5BnXTDVLfE4ddKZdllnGuPGGDQ==
@@ -4674,6 +4674,16 @@ ember-auto-import@^1.10.1:
     walk-sync "^0.3.3"
     webpack "^4.43.0"
 
+ember-changeset@^3.13.2:
+  version "3.13.2"
+  resolved "https://registry.yarnpkg.com/ember-changeset/-/ember-changeset-3.13.2.tgz#1d17dcae126f53663e8773feed6a9ff09fb94a37"
+  integrity sha512-/ZzXQ51b7Tlv12jJwBIt4DL9Zbkv8uM60qASYhaFqOH1GoCjxWeb1r5c+c0iYQaLzsNjhg5UErMrxEXzNTnXhw==
+  dependencies:
+    "@glimmer/tracking" "^1.0.1"
+    ember-auto-import "^1.5.2"
+    ember-cli-babel "^7.19.0"
+    validated-changeset "~0.14.2"
+
 ember-cli-app-version@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-4.0.0.tgz#033057ec5fe4d3ecdf5ac5380d442e2dc9f7526a"
@@ -4706,7 +4716,7 @@ ember-cli-babel@^6.0.0-beta.4:
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.13.2, ember-cli-babel@^7.18.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.26.2, ember-cli-babel@^7.4.0, ember-cli-babel@^7.7.3:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.13.0, ember-cli-babel@^7.13.2, ember-cli-babel@^7.18.0, ember-cli-babel@^7.19.0, ember-cli-babel@^7.22.1, ember-cli-babel@^7.23.0, ember-cli-babel@^7.23.1, ember-cli-babel@^7.26.2, ember-cli-babel@^7.4.0, ember-cli-babel@^7.7.3:
   version "7.26.2"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.26.2.tgz#497985e741ffcc08f89f98c9464509e91cdb2809"
   integrity sha512-bSSlFbUBfLwaabGpLgoLkOKMIdDRWu3cPBNrN2UQXfzlPei3nZblDatSzPbCZ7O5faJHRi13ra3Q4odnCoBtTg==
@@ -11041,6 +11051,11 @@ validate-peer-dependencies@^1.1.0:
   dependencies:
     resolve-package-path "^3.1.0"
     semver "^7.3.2"
+
+validated-changeset@~0.14.2:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/validated-changeset/-/validated-changeset-0.14.2.tgz#e1f3f869cac64e5b5841fccdd1c8cdfa72d16c34"
+  integrity sha512-HeAXQzP7531BnkAPYu8ZfOCFlkD+nOFl213k5sAntQ0kVkRGokl5VGXGlD3T4ox9nBJPS5FvzvdIX14RnuhLww==
 
 vary@~1.1.2:
   version "1.1.2"

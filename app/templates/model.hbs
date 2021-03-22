@@ -1,0 +1,25 @@
+{{page-title "Model"}}
+
+<section>
+  This implementation keeps the model data in a model object in the route. 
+  <ul>
+      <li>The model holds the real data.</li>
+      <li>The model has the methods to validate the data going into it.</li>
+      <li>The model can only be accessed by the route's controller and anything it passes the model to.</li>
+  </ul> 
+  <QueryParmTester
+    @queryText={{this.text}} 
+    @formText={{this.formContents.formText}}
+    @modelValue={{this.model.value}}
+    @errorText={{this.model.errorText}}
+  >
+    <:query>
+      <LoadPageLink @page="model" @value={{this.queryValue}}/>
+      <TextInput @id="queryval" @labelText = " with: " @value={{this.text}} @changed={{this.changeQueryParameter}}/>
+    </:query>
+    <:input>
+      <FormInput @contents={{this.formContents}} @submitted={{this.formSubmitted}}/>
+    </:input>
+  </QueryParmTester>
+
+</section>

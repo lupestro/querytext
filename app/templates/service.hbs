@@ -1,0 +1,25 @@
+{{page-title "Service"}}
+
+<section>
+  This implementation keeps the model data in a model service. 
+  <ul>
+      <li>The model holds the real data.</li>
+      <li>The model has the methods to validate the data going into it.</li>
+      <li>The model is in a service so it can be accessed by controllers, components, other services, etc.</li>
+  </ul> 
+
+  <QueryParmTester
+    @queryText={{this.text}} 
+    @formText={{this.formContents.formText}}
+    @modelValue={{this.modelService.value}}
+    @errorText={{this.modelService.errorText}}
+  >
+    <:query>
+      <LoadPageLink @page="service" @value={{this.queryValue}}/>
+      <TextInput @id="queryval" @labelText = " with: " @value={{this.text}} @changed={{this.changeQueryParameter}}/>
+    </:query>
+    <:input>
+      <FormInput @contents={{this.formContents}} @submitted={{this.formSubmitted}}/>
+    </:input>
+  </QueryParmTester>
+</section>

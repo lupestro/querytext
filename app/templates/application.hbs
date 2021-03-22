@@ -1,5 +1,31 @@
-{{page-title "Queertext"}}
+{{page-title "Query Text"}}
 
-<h2 id="title">Welcome to Ember</h2>
+<header>
+  <nav class="nav">
+    {{#if this.validDisabled}}
+    <button type="button" disabled>
+      Load Valid Value
+    </button>
+    {{else}}
+    <button type="button" {{on 'click' this.clickedLoadValid}}>
+      Load Valid Value
+    </button>
+    {{/if}}
+    {{#if this.invalidDisabled}}
+    <button type="button" disabled>
+      Load Invalid Value
+    </button>
+    {{else}}
+    <button type="button" {{on 'click' this.clickedLoadInvalid}}>
+      Load Invalid Value
+    </button>
+    {{/if}}
+  </nav>
+</header>
+<main>
 
 {{outlet}}
+
+<LinkTo @route="index">Back to Top</LinkTo>
+
+</main>

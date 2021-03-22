@@ -1,0 +1,13 @@
+{{#if @value}}
+    {{#if @spares}}
+        <a href="http://localhost:4200/{{@page}}?text={{@value}}&{{@spares}}" ...attributes>Load Page</a>
+    {{else}}
+        <a href="http://localhost:4200/{{@page}}?text={{@value}}" ...attributes>Load Page</a>
+    {{/if}}
+{{else}}
+    {{#if @spares}}
+        <a href="http://localhost:4200/{{@page}}?{{@spares}}" ...attributes>Load Page</a>
+    {{else}}
+        <a href="http://localhost:4200/{{@page}}" ...attributes>Load Page</a>
+    {{/if}}
+{{/if}}

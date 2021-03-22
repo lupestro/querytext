@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'queertext',
+    modulePrefix: 'querytext',
     environment,
     rootURL: '/',
     locationType: 'auto',

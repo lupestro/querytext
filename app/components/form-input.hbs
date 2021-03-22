@@ -1,0 +1,3 @@
+<form {{on 'submit' this.submitted}} ...attributes >
+    <TextInput @id="formval" @labelText = "Enter a number between 1 and 20: " @value={{this.contents.formText}} @input={{fn this.valueChanged 'formText'}} @changed={{this.fieldChanged}}/>
+</form>

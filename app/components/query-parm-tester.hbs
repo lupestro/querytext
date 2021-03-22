@@ -1,0 +1,14 @@
+<h3 id="query-section">Query</h3>
+<p class="input-area">
+  {{yield to='query'}}
+</p>
+<p>Current Query Parameter Value: {{@queryText}}</p>
+
+<h3 id="form-section">User Inputs</h3>
+<div class="input-area">
+  {{yield to="input"}}
+</div>
+<p>Current Form Parameter Value: {{@formText}}</p>
+
+<h3 id="results-section">Model Value</h3>
+<ModelDisplay @value={{@modelValue}} @error={{@errorText}} />

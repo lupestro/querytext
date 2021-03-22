@@ -1,0 +1,69 @@
+{{page-title "Index"}}
+<section>
+    <h2 id="explanation">What this application is about</h2>
+    This application demonstrates the interactions of numeric input.
+    <ol>
+        <li>Invocation with or without a query parameter</li>
+        <li>Accepting input from:
+            <ul>
+                <li>Query parameters</li>
+                <li>The user</li>
+                <li>External sources - like files</li>
+            </ul>
+        </li>
+
+        <li>Validation of input from all sources</li>
+        <li>Setting model values</li>
+    </ol>
+
+    The facets of interest here are:
+    <ul>
+    <li>The model - the data we're interested in
+        <ul>
+        <li>Stored as a number, the form in which it is understood and used.</li>
+        <li>Not stored as text, the form in which it is supplied.</li> 
+        <li>Wherever we change it, the change needs to propagate everywhere else.</li>
+        </ul>
+    </li>
+    <li>The URL - carries the data in query parameters
+        <ul>
+        <li>Getting data from the URL on load</li>
+        <li>The journey from the URL to the model</li>
+        <li>Getting data into the URL if anything changes it successfully</li>
+        </ul>
+    </li>
+    <li>The user inputs - data entered into the app
+        <ul>
+        <li>Getting data as text from the user.</li>
+        <li>The journey from the input field to the model</li>
+        <li>Getting data into the user input field if anything changes it successfully</li>
+        </ul>
+    </li>
+    <li>Data load services - another place data can come from
+        <ul>
+        <li>Getting data in whatever form from a data loader - like "load from file".</li>
+        <li>The journey from the stored data to the model</li>
+        <li>One-way trip - nowhere that updated data needs to get back to. Save is a different operation.</li>
+        </ul>
+    </li>
+    <li>The journey from any source to the model
+        <ul>
+        <li>Validating that it parses correctly into a numeric value</li>
+        <li>Validating that the numeric value is intrinsically valid and fits with the rest of the data</li>
+        <li>Communicating to the user if the URL is invalid and why</li>
+        <li>Only updating the "gold" value when the entered value is valid.</li>
+        <li>Parse validation varies among the sources - the rest is identical</li>
+        </ul>
+    </li>
+    </ul>
+
+    We tackle this in layers of sophistication. Each builds on the previous one:
+    <ul>
+        <li>A <LinkTo @route="raw">raw solution</LinkTo> with all the basic pieces together in the controller.</li>
+        <li>A solution using a <LinkTo @route="model">route model</LinkTo> without services.</li>
+        <li>A solution using a <LinkTo @route="service">model service</LinkTo> to manage the model.</li>
+        <li>A solution using a <LinkTo @route="url">url service</LinkTo> to manage the query parameters.</li>
+        <li>A solution using a <LinkTo @route="local">local change set</LinkTo> for model changes, validating only user input.</li>
+        <li>A solution using a <LinkTo @route="global">global change set</LinkTo> that external input must go through.</li>
+    </ul>
+</section>

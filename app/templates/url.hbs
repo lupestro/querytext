@@ -1,0 +1,23 @@
+{{page-title "Query"}}
+
+<section>
+  This implementation moves the query parameter handling to a service.
+  <ul>
+    <li>The parameter value is drawn from the current route, not the value in the controller.</li>
+    <li>Setting the parameter value performs a transition to the current route.</li>
+  </ul>
+  <QueryParmTester
+    @queryText={{this.url.text}} 
+    @formText={{this.formContents.formText}}
+    @modelValue={{this.modelService.value}}
+    @errorText={{this.modelService.errorText}}
+  >
+    <:query>
+      <LoadPageLink @page="url" @value={{this.queryValue}} @spares={{this.url.spareQueryParameters}}/>
+      <TextInput @id="queryval" @labelText = " with: " @value={{this.url.text}} @changed={{this.changeQueryParameter}}/>
+    </:query>
+    <:input>
+      <FormInput @contents={{this.formContents}} @submitted={{this.formSubmitted}}/>
+    </:input>
+  </QueryParmTester>
+</section>

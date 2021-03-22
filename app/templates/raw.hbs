@@ -1,0 +1,27 @@
+{{page-title "Raw"}}
+
+<section class="section">
+  This solution is self-contained.
+  <ul>
+    <li>Model, input, and validation all live together in the controller.</li>
+    <li>We have extracted the user input elements to DDAU components, which we reuse on each page.</li>
+    <li>The components return the data as they received it, so they don't affect what we're chasing.</li>
+    <li>External loads are invoked from the toolbar, i.e. externally.</li>
+  </ul>
+
+  <QueryParmTester
+    @queryText={{this.text}} 
+    @formText={{this.formContents.formText}}
+    @modelValue={{this.modelValue}}
+    @errorText={{this.errorText}}
+  >
+    <:query>
+      <LoadPageLink @page="raw" @value={{this.queryValue}}/>
+      <TextInput @id="queryval" @labelText = " with: " @value={{this.text}} @changed={{this.changeQueryParameter}}/>
+    </:query>
+    <:input>
+      <FormInput @contents={{this.formContents}} @submitted={{this.formSubmitted}}/>
+    </:input>
+  </QueryParmTester>
+
+</section>

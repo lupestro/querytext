@@ -60,8 +60,12 @@
     "qunit": "^2.14.0",
     "qunit-dom": "^1.6.0"
   },
+  "resolutions": {
+    "clean-css": ">=4.1.11",
+    "xmldom": ">=0.5.0"
+  },
   "engines": {
-    "node": "10.* || >= 12"
+    "node": "12.* || >= 14"
   },
   "ember": {
     "edition": "octane"

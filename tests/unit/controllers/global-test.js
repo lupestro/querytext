@@ -1,11 +1,11 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-module('Unit | Controller | global', function(hooks) {
+module('Unit | Controller | global', function (hooks) {
   setupTest(hooks);
 
   // TODO: Replace this with your real tests.
-  test('it exists', function(assert) {
+  test('it exists', function (assert) {
     let controller = this.owner.lookup('controller:global');
     assert.ok(controller);
   });

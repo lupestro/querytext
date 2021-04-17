@@ -2,24 +2,21 @@
 
 <header>
   <nav class="nav">
-    {{#if this.validDisabled}}
-    <button type="button" disabled>
-      Load Valid Value
-    </button>
+    {{#if this.loadDisabled}}
+      <button type="button" disabled>
+        Load Valid 
+      </button>
+      <button type="button" disabled>
+        Load Invalid
+      </button>
     {{else}}
-    <button type="button" {{on 'click' this.clickedLoadValid}}>
-      Load Valid Value
-    </button>
-    {{/if}}
-    {{#if this.invalidDisabled}}
-    <button type="button" disabled>
-      Load Invalid Value
-    </button>
-    {{else}}
-    <button type="button" {{on 'click' this.clickedLoadInvalid}}>
-      Load Invalid Value
-    </button>
-    {{/if}}
+      <button type="button" {{on 'click' (fn this.clickedLoad true) }}>
+        Load Valid
+      </button>
+      <button type="button" {{on 'click' (fn this.this.clickedLoad false) }}>
+        Load Invalid
+      </button>
+      {{/if}}
   </nav>
 </header>
 <main>

@@ -3,33 +3,21 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
-  validAction = null;
-  invalidAction = null;
-  @tracked validDisabled = true;
-  @tracked invalidDisabled = true;
+  loadAction;
+  @tracked loadDisabled = true;
 
-  onChildRouted(validAction, invalidAction) {
-    this.validDisabled = false;
-    this.invalidDisabled = false;
-    this.validAction = validAction;
-    this.invalidAction = invalidAction;
-    if (!this.validAction) {
-      this.validDisabled = true;
-    }
-    if (!this.invalidAction) {
-      this.invalidDisabled = true;
+  onChildRouted(loadAction) {
+    this.loadDisabled = false;
+    this.loadAction = loadAction;
+    if (!this.loadAction) {
+      this.loadDisabled = true;
     }
   }
 
   // User input
-  @action clickedLoadValid() {
-    if (this.validAction) {
-      this.validAction();
-    }
-  }
-  @action clickedLoadInvalid() {
-    if (this.invalidAction) {
-      this.invalidAction();
+  @action clickedLoad(useValidValue) {
+    if (this.loadAction) {
+      this.loadAction(useValidValue);
     }
   }
 }

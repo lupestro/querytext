@@ -11,6 +11,8 @@ export default class QueryController extends Controller {
   // Query parameters - controller only stuff
   queryParams = ['text'];
   @tracked text = '5';
+  validValue = '14';
+  invalidValue = '24';
 
   // Input field values
   @tracked queryValue = '';
@@ -34,11 +36,12 @@ export default class QueryController extends Controller {
     this.formContents = contents;
     this.testSetModelValue(contents.formText);
   }
-  @action validClicked() {
-    this.testSetModelValue('13');
-  }
-  @action invalidClicked() {
-    this.testSetModelValue('25');
+  @action loadClicked(loadValidValue) {
+    if (loadValidValue) {
+      this.testSetModelValue(this.validValue);
+    } else {
+      this.testSetModelValue(this.invalidValue);
+    }
   }
 
   // Orchestrate

@@ -6,6 +6,14 @@ export default class GlobalController extends Controller {
   // Query parameters
   queryParams = ['text'];
   @tracked text = '5';
-  @action validClicked() {}
-  @action invalidClicked() {}
+  validValue = '16';
+  invalidValue = '26';
+
+  @action loadClicked(loadValidValue) {
+    if (loadValidValue) {
+      this.testSetModelValue(this.validValue);
+    } else {
+      this.testSetModelValue(this.invalidValue);
+    }
+  }
 }

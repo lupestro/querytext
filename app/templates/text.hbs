@@ -1,0 +1,34 @@
+{{page-title "Text"}}
+
+<section class="section">
+  This explores a simple text input.
+  <ul>
+    <li>The user enters text, which is parsed to see if it is a number.</li>
+    <li>No range checks are performed - we are doing text validation only. If it passes, it goes to the official value</li>
+    <li>External loads are invoked from the toolbar, i.e. externally, and these do update the official value.</li>
+    <li>This limited solution does not consider query parameters. We are just trying to see that:
+        <ul>
+            <li>Valid user-entered text arrives at the destination.</li>
+            <li>Invalid user-entered text produces an error message, no change at the destination, and continues to be displayed in the input box.</li>
+            <li>External changes to the destination data are propagated:
+                <ul>
+                    <li>via data-down up to the text input field</li>
+                    <li>not as a part of the actions-up of the place that put them in the destination</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+  </ul>
+
+  <label for="formval" >Enter a number between 1 and 20:</label>
+  <input 
+    id="formval" type="text" 
+    value={{this.formText}} 
+    {{on 'input' this.valueChanged}}
+    {{on 'change' this.changeSubmitted}}
+  /> 
+
+  <p class="value-line">Model Value: <span class="value">{{this.modelValue}}</span></p>
+  <p class="error">{{this.errorText}}</p>
+
+</section>

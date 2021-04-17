@@ -9,18 +9,24 @@ module('Integration | Component | form-input', function (hooks) {
   test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
+    this.contents = { inputText: '15' };
+    await render(hbs`<FormInput @contents={{this.contents}} />`);
 
-    await render(hbs`<FormInput />`);
+    assert.equal(
+      this.element.textContent.trim(),
+      'Enter a number between 1 and 20:'
+    );
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
+    // Template block usage: block ignored
     await render(hbs`
-      <FormInput>
+      <FormInput @contents={{this.contents}}>
         template block text
       </FormInput>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(
+      this.element.textContent.trim(),
+      'Enter a number between 1 and 20:'
+    );
   });
 });

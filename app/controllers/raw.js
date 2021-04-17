@@ -6,6 +6,8 @@ export default class RawController extends Controller {
   // Query parameters - controller only stuff
   queryParams = ['text'];
   @tracked text = '5';
+  validValue = '11';
+  invalidValue = '21';
 
   // Input field values
   @tracked queryValue = '';
@@ -31,11 +33,12 @@ export default class RawController extends Controller {
     this.formContents = contents;
     this.testSetModelValue(contents.formText);
   }
-  @action validClicked() {
-    this.testSetModelValue('13');
-  }
-  @action invalidClicked() {
-    this.testSetModelValue('25');
+  @action loadClicked(loadValidValue) {
+    if (loadValidValue) {
+      this.testSetModelValue(this.validValue);
+    } else {
+      this.testSetModelValue(this.invalidValue);
+    }
   }
 
   // Orchestrate

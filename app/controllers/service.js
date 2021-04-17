@@ -9,6 +9,8 @@ export default class ServiceController extends Controller {
   // Query parameters - controller only stuff
   queryParams = ['text'];
   @tracked text = '5';
+  validValue = '13';
+  invalidValue = '23';
 
   // Input field values
   @tracked queryValue = '';
@@ -30,11 +32,12 @@ export default class ServiceController extends Controller {
     this.formContents = contents;
     this.testSetModelValue(contents.formText);
   }
-  @action validClicked() {
-    this.testSetModelValue('13');
-  }
-  @action invalidClicked() {
-    this.testSetModelValue('25');
+  @action loadClicked(loadValidValue) {
+    if (loadValidValue) {
+      this.testSetModelValue(this.validValue);
+    } else {
+      this.testSetModelValue(this.invalidValue);
+    }
   }
 
   // Orchestrate

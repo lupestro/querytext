@@ -21,6 +21,6 @@ module('Integration | Component | text-input', function (hooks) {
       </TextInput>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.equal(this.element.textContent.trim(), '');
   });
 });
